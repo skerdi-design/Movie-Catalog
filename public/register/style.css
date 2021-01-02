@@ -129,6 +129,9 @@ body,html{
 .container .row input:invalid:not(:placeholder-shown){
     border: 1px solid red;
 }
+.container .row input.wrong{
+    border: 1px solid red;
+}
 
 .container .row input:not(:placeholder-shown) + label,
 .container .row input:focus + label{
@@ -271,4 +274,28 @@ input:-webkit-autofill::first-line{
 .logo1 .header2 i{
     color: rgba(45, 17, 43,1);
     font-size: 24px;
+}
+.invalid{
+    position: absolute;
+    margin-top: 60px;
+    font-size: 10px;
+    color: red;
+    opacity: 0;
+    transition: all 0.1s;
+}
+.invalid.true{
+    opacity: 1;
+    font-size: 16px;
+}
+.invalid2{
+    position: absolute;
+    margin-top: 60px;
+    font-size: 10px;
+    color: red;
+    opacity: 0;
+    transition: all 0.1s;
+}
+.invalid2.true{
+    opacity: 1;
+    font-size: 16px;
 }

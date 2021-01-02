@@ -1,24 +1,10 @@
-
-console.log("hi...");
 const form = document.querySelector(".register");
-// const inputData = form.querySelectorAll(".row");
-const value = [];
-// console.log(inputData,value);
-// console.log(form,inputData);
-// form.addEventListener("submit",(e)=>{
-    // e.preventDefault();
-    // console.log("submited");
-    // inputData.forEach(ele=>{
-    //     value.push(ele.querySelector("input").value);
-    // });
-    // const data = {
-    //     username:value[0],
-    //     email:value[1],
-    //     password:value[2]
-    // }
-    // console.log(data)
-    // fetch("/register",{method:'POST',headers: {'Content-Type': 'application/json',},body:JSON.stringify(data)});
-// });
+const invalid = document.querySelector(".invalid");
+const invalid2 = document.querySelector(".invalid2")
+const input = document.querySelector("#name");
+const input2 = document.querySelector("#email");
+
+
 form.addEventListener("submit",(e)=>{
     const data = {
         username:document.querySelector("#name").value,
@@ -35,7 +21,33 @@ form.addEventListener("submit",(e)=>{
         },
         redirect: 'follow',
         body:JSON.stringify(data)
-    }
+    };
     fetch('/register',head)
-    .then(res=>{window.location.href = res.url});
+    .then(res=>{
+        console.log(res);
+        if(res.redirected == false && res.status == 200){
+            invalid.classList.add("true");
+            input.classList.add("wrong");
+        }else if(res.redirected == false && res.status == 204){
+            invalid.classList.add("true");
+            input.classList.add("wrong");
+            input2.classList.add("wrong");
+            invalid2.classList.add("true");
+        }else{
+            window.location.href = res.url
+        }
+    });
 })
+
+input.addEventListener("click",(e)=>{
+    input.classList.remove("wrong");
+    invalid.classList.remove("true");
+    input2.classList.remove("wrong");
+    invalid2.classList.remove("true");
+});
+input2.addEventListener("click",(e)=>{
+    input.classList.remove("wrong");
+    invalid.classList.remove("true");
+    input2.classList.remove("wrong");
+    invalid2.classList.remove("true");
+});
