@@ -41,11 +41,25 @@ function authUser (email,password) {
             if(doc.length == 0){
                 console.log("wrong email");
                 res(null);
+            }else if(doc[0].password != password){
+                console.log("wrong password!!!");
+                res(null);
             }else{
-                console.log(doc);
                 res(doc[0]);
+            };
+        })
+    })
+}
+function allowUser (sessionid){
+    return new Promise((res,rej)=>{
+        db.find({_id:sessionid},(err,docs)=>{
+            if(err)throw err;
+            if(docs.length == 0){
+                res(null);
+            }else{
+                res(docs[0]);
             }
         })
     })
 }
-module.exports = {findUser,authUser};
+module.exports = {findUser,authUser,allowUser};

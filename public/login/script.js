@@ -1,4 +1,6 @@
 const form = document.querySelector(".form");
+const message = document.querySelector(".message");
+const input = document.querySelectorAll("input");
 
 form.addEventListener("submit",(e)=>{
     e.preventDefault();
@@ -15,6 +17,19 @@ form.addEventListener("submit",(e)=>{
         body:JSON.stringify(data)
     };
     fetch("/login",options)
-    .then(res=>{console.log(res)
-        window.location.href = res.url});
+    .then(res=>{
+        if(res.redirected === false){
+            message.classList.add("wrong");
+            input.forEach(x=>{
+                x.classList.add("wrong");
+            })
+        }else{
+            window.location.href = res.url;
+        }
+    });
 })
+
+input.forEach(x=>{x.addEventListener("click",()=>{
+    x.classList.remove("wrong"),
+    message.classList.remove("wrong");
+})})

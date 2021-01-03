@@ -5,6 +5,7 @@
     color: white;
     font-family: sans-serif;
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    user-select: none;
 }
 body,html{
     width: 100%;
@@ -138,6 +139,15 @@ body,html{
     stroke: rgb(214, 14, 0);
 }
 
+.container .row input.wrong ~ svg{
+    opacity: 1;
+    stroke-dasharray: 258, 0;
+    stroke-dashoffset: 0;
+}
+.container .row input.wrong ~ svg .path{
+    stroke: rgb(214, 14, 0);
+}
+
 
 
 
@@ -259,4 +269,17 @@ body,html{
 .logo1 .header2 i{
     color: rgba(45, 17, 43,1);
     font-size: 24px;
+}
+
+.message{
+    color: rgb(201, 0, 0);
+    position: absolute;
+    font-size: 10px;
+    margin-top: 60px;
+    opacity: 0;
+    transition: all 0.1s;
+}
+.message.wrong{
+    font-size: 16px;
+    opacity: 1;
 }
