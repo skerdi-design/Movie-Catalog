@@ -1,5 +1,6 @@
 const Datastore = require("nedb");
 const db = new Datastore({filename:"database.db"});
+const bcrypt = require("bcryptjs");
 
 db.loadDatabase((err)=>{
     if(err) throw err;
@@ -38,10 +39,11 @@ function authUser (email,password) {
     }
     return new Promise((res,rej)=>{
         db.find({email:email},(err,doc)=>{
+            console.log(bcrypt.compareSync(password,doc[0].password));
             if(doc.length == 0){
                 console.log("wrong email");
                 res(null);
-            }else if(doc[0].password != password){
+            }else if(!(bcrypt.compareSync(password,doc[0].password))){
                 console.log("wrong password!!!");
                 res(null);
             }else{

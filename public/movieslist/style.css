@@ -5,100 +5,110 @@
   user-select: none;
   font-family: sans-serif;
 }
-html{
-  overflow: hidden;
+body,html{
+  overflow-x: hidden;
+  /* background-color: #fedcc8; */
 }
 body,html{
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
-  background-color: #FEDCC8;
+  overflow:hidden;
+  /* border: 1px solid black; */
+
 }
-.scroll{
-  border: 1px solid blue;
-  position: absolute;
-  width: 1px;
-  height: 300px;
-  right: 20px;
-  top: 50%;
-  transform: translate(0%,-50%);
-  z-index: 8;
+.container{
+  width: 100%;
+  height: 200%;
+  /* border: 10px solid red; */
+  overflow: hidden;
+  transition: all 1.4s;
+  transition-timing-function: ease-in-out;
+  transform: translateY(0px);
 }
-.scroll .scroller{
-  border: 3px solid blue;
-  width: 1px;
-  height: 50px;
-  border-radius: 10px;
-  z-index: 10;
-  margin-left: -3px;
-  margin-top: -1px;
-  cursor: pointer;
+
+.goup{
+  border: 1px solid white;
+  width: 38px;
+  height: 38px;
+  position: fixed;
+  right: 3.5%;
+  top: 90%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0);
+  cursor:pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
+  z-index: 1;
+  transform: rotate(180deg);
 }
 .intro{
-  width: 100%;
-  height: 100%;
-  /* border: 2px solid black; */
+  /* border: 1px solid blue; */
+  background-color: #fedcc8;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   position: relative;
 }
 .intro .parallax{
+  /* border: 1px solid red; */
   width: 100%;
-  height: 75%;
-  display: flex;
-  flex-direction: column;
+  height: 55%;/* might change it back to 75% */
   position: absolute;
 }
 .intro .parallax .parallax-image{
+  /* border: 1px solid red; */
   position: absolute;
   width: 100%;
   height: 100%;
   background-repeat:no-repeat;
 }
-.parallax__0{
-  background-image: url("https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_0.png?raw=true");
+.intro .parallax .parallax__0{
+  background-image:url("/image/layer_0.png");
   background-size:cover;
   background-position: center;
-  position: fixed;
+  position: absolute;
 }
 .parallax__1{
-  background-image:url("https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_1.png?raw=true");
+  background-image:url("/image/layer_1.png");
   background-size:cover;
   background-position: center;
 }
 .parallax__2{
-  background-image:url("https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_2.png?raw=true");
+  background-image:url("/image/layer_2.png");
   background-size:cover;
   background-position: center;
 }
 .parallax__3{
-  background-image:url("https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_3.png?raw=true");
+  background-image:url("/image/layer_3.png");
   background-size:cover;
   background-position: center;
 }
 .parallax__4{
-  background-image:url("https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_4.png?raw=true");
+  background-image:url("/image/layer_4.png");
   background-size:cover;
   background-position: center;
 }
 .parallax__5{
-  background-image:url("https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_5.png?raw=true");
+  background-image:url("/image/layer_5.png");
   background-size:cover;
   background-position: center;
 }
 .parallax__6{
-  background-image:url("https://github.com/samdbeckham/blog/blob/master/dev/_assets/images/articles/firewatch/layer_6.png?raw=true");
+  background-image:url("/image/layer_6.png");
   background-size:cover;
   background-position: center;
 }
-.intro .head{
+.intro .parallax .head{
   color: rgb(45, 17, 43);
   font-family: 'Brush Script MT', cursive;
   position: fixed;
   left: 50%;
-  top: 22%;
-  transform: translate(-50%,-50%);
+  top: 250px;
+  transform: translateX(-50%);
   font-size: 40px;
 }
 .intro .but{
@@ -139,8 +149,8 @@ body,html{
 
 
 .body{
-  /* border: 2px solid red; */
-  width: 100%;
+  /* border: 1px solid red; */
+  width: 100vw;
   min-height: 100vh;
   height: auto;
   background-color:rgba(45, 17, 43,1);
@@ -149,6 +159,7 @@ body,html{
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow-y: scroll;
 }
 .body .menu{
   position: absolute;
@@ -515,8 +526,11 @@ body,html{
 }
 
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
  width: 8px;
+ position: absolute;
+ right: 10px;
+ margin-right: 10px;
 }
 ::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.5);
@@ -531,4 +545,32 @@ body,html{
 }
 ::-webkit-scrollbar-thumb:active {
   background: rgba(255, 138, 66,1);
-} */
+}
+
+.debug {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  border: 3px solid blue;
+  top: 0;
+  left: calc(50% - 25px);
+  cursor: pointer;
+  z-index: 12;
+}
+.debug:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.debuger {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  border: 3px solid green;
+  top: 0;
+  left: calc(50% - 25px);
+  cursor: pointer;
+  z-index: 12;
+}
+.debuger:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+

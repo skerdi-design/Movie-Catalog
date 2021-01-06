@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const session = require("express-session");
+const bcrypt = require("bcryptjs");
+
 const {findUser,authUser,allowUser} = require("./utils.js");
 
 
@@ -58,23 +60,24 @@ app.get("/login/js",(req,res)=>{
 
 
 app.get("/movieslist",(req,res)=>{
-    if(!(req.session && req.session.userId)){
-        res.redirect("/login");
-    }
-    allowUser(req.session.userId)
-    .then(doc=>{
-        // console.log(user);
-        if(doc === null){
-            res.redirect("/login");
-        }else{
-            //setting the user variable as the one that db found
-            user=doc;
-            res.sendFile("./movieslist/index.html",root);
-        }
-    })
-    .catch(err=>{
-        console.log(err);
-    });
+    // if(!(req.session && req.session.userId)){
+    //     res.redirect("/login");
+    // }
+    // allowUser(req.session.userId)
+    // .then(doc=>{
+    //     // console.log(user);
+    //     if(doc === null){
+    //         res.redirect("/login");
+    //     }else{
+    //         //setting the user variable as the one that db found
+    //         user=doc;
+    //         res.sendFile("./movieslist/index.html",root);
+    //     }
+    // })
+    // .catch(err=>{
+    //     console.log(err);
+    // });
+    res.sendFile("./movieslist/index.html",root);
 })
 app.get("/movieslist/css",(req,res)=>{
     res.sendFile("/movieslist/style.css",root);
@@ -82,10 +85,15 @@ app.get("/movieslist/css",(req,res)=>{
 app.get("/movieslist/js",(req,res)=>{
     res.sendFile("/movieslist/script.js",root);
 })
+app.get("/image/:name",(req,res)=>{
+    res.sendFile("/image/"+req.params.name,root)
+})
 
 
 app.post('/register',(req,res)=>{
-    findUser(req.body.username,req.body.email,req.body.password)
+    let hash = bcrypt.hashSync(req.body.password,14);
+    req.body.password = hash;
+    findUser(req.body.username,req.body.email,hash)
     .then((docs)=>{
         if(docs === null){
             res.send("Username taken!!!");
