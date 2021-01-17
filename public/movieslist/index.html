@@ -8,8 +8,7 @@
     <script src="https://kit.fontawesome.com/8208db101c.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="container" style="transform: translateY(0px);">
-    <div class="debug"></div>
+  <div class="container">
     <div class="intro">
       <div class="parallax">
         <div class="parallax-image parallax__0"></div>
@@ -21,30 +20,54 @@
         <div class="parallax-image parallax__5"></div>
         <div class="parallax-image parallax__6"></div>
       </div>
+      <div class="debug"><i class="fas fa-angle-down"></i></div>
     </div>
     <div class="body">
-      <div class="debuger"></div>
-    </div>
-  </div>
-  <!-- <div class="goup"><i class="fas fa-angle-down"></i></div> -->
-  <!-- <div class="debug"></div>
-    <div class="intro">
-      <div class="parallax">
-        <div class="parallax-image parallax__0"></div>
-        <div class="parallax-image parallax__1"></div>
-        <div class="parallax-image parallax__2"></div>
-        <div class="parallax-image parallax__3"></div>
-        <h1 class="head">MovieCatalog<i class="fas fa-film"></i></h1>
-        <div class="parallax-image parallax__4"></div>
-        <div class="parallax-image parallax__5"></div>
-        <div class="parallax-image parallax__6"></div>
-        <div class="but"><i class="fas fa-angle-down"></i></div>
+      <div class="object">
+        <div class="layer1">
+          <div class="layer2">
+            <div class="layer3">
+              <div class="layer4"></div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="body">
-      <div class="goup"></div>
-    </div> -->
-    <!-- <div class="body">
+      <div class="object">
+        <div class="layer1">
+          <div class="layer2">
+            <div class="layer3">
+              <div class="layer4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="object">
+        <div class="layer1">
+          <div class="layer2">
+            <div class="layer3">
+              <div class="layer4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="object">
+        <div class="layer1">
+          <div class="layer2">
+            <div class="layer3">
+              <div class="layer4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="object">
+        <div class="layer1">
+          <div class="layer2">
+            <div class="layer3">
+              <div class="layer4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="menu">
         <div class="left">
           <h2 class="logo">MovieCatalog<i class="fas fa-film"></i></h2>
@@ -53,6 +76,9 @@
           <p class="about">about</p>
           <div class="options"><i class="fas fa-ellipsis-h"></i></div>
         </div>
+        <div class="middle">
+          <div class="debuger"><i class="fas fa-angle-up"></i></div>
+        </div>
         <div class="right">
           <div class="search">
             <input type="text" id="search" placeholder="search...">
@@ -60,112 +86,121 @@
             <div class="button"><i class="fas fa-search"></i></div>
           </div>
           <div class="user">
-            <div class="icon"></div>
-            <p class="name">Name</p>
+            <div class="icon">
+              <i class="fas fa-user"></i>
+            </div>
+            <p class="name"></p>
           </div>
         </div>
       </div>
       <div class="slider">
-        <div class="content">
-          <div class="ele">
-            <div class="overlay"></div>
-          </div>
-          <div class="ele">
-            <div class="overlay"></div>
-          </div>
-          <div class="ele">
-            <div class="overlay"></div>
-          </div>
-          <div class="ele">
-            <div class="overlay"></div>
-          </div>
-          <div class="ele">
-            <div class="overlay"></div>
-          </div>
-          <div class="ele">
-            <div class="overlay"></div>
-          </div>
-          <div class="ele">
-            <div class="overlay"></div>
-          </div>
-          <div class="ele">
-            <div class="overlay"></div>
-          </div>
-          <div class="ele">
-            <div class="overlay"></div>
-          </div>
+        <div class="content" id="content">
+          <!-- <div class="ele">
+            <img class="img" src=""></img>
+            <div class="overlay">
+              <a href="" target="_blank" class="play"><i class="fas fa-play"></i></a>
+              <div class="name">The Movie</div>
+            </div>
+          </div> -->
         </div>
         <div class="shadow-left"></div>
         <div class="shadow-right"></div>
-        <div class="left"><i class="fas fa-angle-left"></i></div>
-        <div class="right"><i class="fas fa-angle-right"></i></div>
+        <div class="left" id="left"><i class="fas fa-angle-left"></i></div>
+        <div class="right" id="right"><i class="fas fa-angle-right"></i></div>
       </div>
       <div class="movies">
-        <div class="ele">
+        <div class="add" title="Add"><i class="fas fa-plus"></i></div>
+        <!-- <div class="ele">
+          <img class="photo" src=""></img>
           <div class="rating">6.9</div>
-          <div class="photo"></div>
+          <div class="type">Movie</div>
           <div class="overlay">
-            <div class="open"><i class="fas fa-play"></i></div>
+            <div class="options" id="options"><i class="fas fa-ellipsis-v"></i></div>
+            <a href="" target="_blank" class="open"><i class="fas fa-play"></i></a>
             <h3 class="title">The Movie</h3>
             <div class="genre">Horror, Action</div>
+            <div class="drop-down">
+              <div class="edit" id="edit"><i class="fas fa-pencil-alt"></i>Edit</div>
+              <div class="favorite" id="favorite"><i class="far fa-star"></i>Favorite</div>
+            </div>
           </div>
+        </div> -->
+      </div>
+      <form action="" method="post" class="pop-up">
+        <div>
+          <h3 class="message">Already exists</h3>
+          <div class="x">Ｘ</div>
         </div>
-        <div class="ele">
-          <div class="rating">6.9</div>
-          <div class="photo"></div>
-          <div class="overlay">
-            <div class="open"></div>
-            <h3 class="title">The Movie</h3>
-            <div class="genre">Horror, Action</div>
-          </div>
+        <div>
+          <label for="title">Title:</label>
+          <input id="title" type="text" class="title" placeholder="title" required autocomplete="off">
         </div>
-        <div class="ele">
-          <div class="rating">6.9</div>
-          <div class="photo"></div>
-          <div class="overlay">
-            <div class="open"></div>
-            <h3 class="title">The Movie</h3>
-            <div class="genre">Horror, Action</div>
-          </div>
+        <div>
+          <label for="photo">Photo:</label>
+          <input id="photo" type="text" class="photo" placeholder="photo" required autocomplete="off">
         </div>
-        <div class="ele">
-          <div class="rating">6.9</div>
-          <div class="photo"></div>
-          <div class="overlay">
-            <div class="open"></div>
-            <h3 class="title">The Movie</h3>
-            <div class="genre">Horror, Action</div>
-          </div>
+        <div>
+          <label for="rating">Rating:</label>
+          <input id="rating" type="text" class="rating" placeholder="rating" maxlength="3" required autocomplete="off">
         </div>
-        <div class="ele">
-          <div class="rating">6.9</div>
-          <div class="photo"></div>
-          <div class="overlay">
-            <div class="open"></div>
-            <h3 class="title">The Movie</h3>
-            <div class="genre">Horror, Action</div>
-          </div>
+        <div>
+          <label for="link">Link:</label>
+          <input id="link" type="url" class="link" placeholder="link" required autocomplete="off">
         </div>
-        <div class="ele">
-          <div class="rating">6.9</div>
-          <div class="photo"></div>
-          <div class="overlay">
-            <div class="open"></div>
-            <h3 class="title">The Movie</h3>
-            <div class="genre">Horror, Action</div>
-          </div>
+        <div>
+          <label for="type">Type:</label>
+          <select name="room" id="rooms" class="room">
+            <option value="Movie">Movie</option>
+            <option value="Series">Series</option>
+            <option value="Anime">Anime</option>
+          </select>
         </div>
-        <div class="ele">
-          <div class="rating">6.9</div>
-          <div class="photo"></div>
-          <div class="overlay">
-            <div class="open"></div>
-            <h3 class="title">The Movie</h3>
-            <div class="genre">Horror, Action</div>
-          </div>
+        <div>
+          <label for="">Genre:</label>
+          <select name="genre" class="room">
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Crime">Crime</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Historical">Historical</option>
+            <option value="Horror">Horror</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Philosophical">Philosophical</option>
+            <option value="Political">Political</option>
+            <option value="Romance">Romance</option>
+            <option value="Satire">Satire</option>
+            <option value="Sci-fi">Sci-fi</option>
+            <option value="Thriller">Thriller</option>
+          </select>
+          <label for="">SubGenre:</label>
+          <select name="sub-genre" class="room">
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Crime">Crime</option>
+            <option value="Drama">Drama</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Historical">Historical</option>
+            <option value="Horror">Horror</option>
+            <option value="Fiction">Fiction</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Philosophical">Philosophical</option>
+            <option value="Political">Political</option>
+            <option value="Romance">Romance</option>
+            <option value="Satire">Satire</option>
+            <option value="Sci-fi">Sci-fi</option>
+            <option value="Thriller">Thriller</option>
+          </select>
         </div>
-    </div> -->
-    <!-- <a href="/">home</a> -->
+        <div>
+          <button type="submit">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
   <script src="/movieslist/js"></script>
 </body>
 </html>

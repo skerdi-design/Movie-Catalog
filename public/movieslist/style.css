@@ -7,7 +7,7 @@
 }
 body,html{
   overflow-x: hidden;
-  /* background-color: #fedcc8; */
+  background-color: rgb(45, 17, 43);
 }
 body,html{
   width: 100%;
@@ -21,9 +21,8 @@ body,html{
   height: 200%;
   /* border: 10px solid red; */
   overflow: hidden;
-  transition: all 1.4s;
+  transition: all 1.2s;
   transition-timing-function: ease-in-out;
-  transform: translateY(0px);
 }
 
 .goup{
@@ -107,8 +106,8 @@ body,html{
   font-family: 'Brush Script MT', cursive;
   position: fixed;
   left: 50%;
-  top: 250px;
-  transform: translateX(-50%);
+  top: 240px;
+  /* transform: translateX(-50%); */
   font-size: 40px;
 }
 .intro .but{
@@ -148,6 +147,117 @@ body,html{
 
 
 
+.body .object{
+  /* border: 1px solid white; */
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 350px;
+  left: 150px;
+  transform: translateZ(.35px) rotatez(40deg) scale(1.1);
+  border-radius: 20px;
+  box-shadow: inset 0px 0px 20px 2px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.body .object .layer1{
+  width: 85%;
+  height: 85%;
+  box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  transform:rotatez(45deg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body .object .layer2{
+  width: 85%;
+  height: 85%;
+  box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  transform:rotatez(45deg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body .object .layer3{
+  width: 85%;
+  height: 85%;
+  box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  transform:rotatez(45deg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body .object .layer4{
+  width: 80%;
+  height: 80%;
+  box-shadow: inset 0px 0px 20px 1px rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  transform:rotatez(45deg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body .object:nth-of-type(2){
+  top: 600px;
+  left: 80%;
+  transform: translateZ(.40px) rotatez(25deg);
+}
+.body .object:nth-of-type(3){
+  top: 80%;
+  left: 45%;
+  transform: translateZ(.30px) rotatez(15deg);
+}
+.body .object:nth-of-type(4){
+  top: 120%;
+  left: 20%;
+  transform: translateZ(.30px) rotatez(15deg);
+}
+.body .object:nth-of-type(5){
+  top: 140%;
+  left: 60%;
+  transform: translateZ(.30px) rotatez(15deg);
+}
+
+
+
+
+
+.body .add{
+  /* border: 1px solid white; */
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  width: 2.4vw;
+  height: 2.4vw;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 10;
+}
+.body .add i{
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  transition: all 0.2s;
+}
+.body .add:hover{
+  background: rgba(255, 255, 255, 1);
+}
+.body .add:hover i{
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 16px;
+}
 .body{
   /* border: 1px solid red; */
   width: 100vw;
@@ -157,27 +267,40 @@ body,html{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   position: relative;
   overflow-y: scroll;
+  perspective: 1.5px;
+  transform-style: preserve-3d;
+  overflow-x: hidden;
 }
 .body .menu{
-  position: absolute;
+  position: sticky;
   top: 0;
-  /* border: 1px solid black; */
+  z-index: 10;
   width: 100%;
   height: 70px;
   display: flex;
   color: white;
-  box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.5);
+  background: rgba(45, 17, 43,0.9);
+  transition: all 0.2s;
+  backdrop-filter: blur(1px);
+}
+.body .menu .middle{
+  width: 70px;
+  height: 100%;
+  /* border: 1px solid greenyellow; */
 }
 .body .menu .left{
-  width: 560px;
+  width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  padding-left: 10px;
+  justify-content: flex-end;
+  padding: 15px;
+  padding-right: 0px;
+  position: relative;
   /* border: 1px solid white; */
 }
 .body .menu .left .logo,.body .menu .left .sort,.body .menu .left .home,.body .menu .left .options,.body .menu .left .about{
@@ -192,7 +315,9 @@ body,html{
 .body .menu .left .logo{
   margin-left:-10px;
   font-family: 'Brush Script MT', cursive;
-  font-size: 24px;
+  font-size: 26px;
+  position: absolute;
+  left: 50px;
 }
 .body .menu .left .logo i{
   color: coral;
@@ -203,6 +328,7 @@ body,html{
   font-size: 12px;
   text-transform: uppercase;
   padding: 2px;
+  margin-right: 2vw;
   transition: all 0.15s;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -214,7 +340,7 @@ body,html{
 }
 .body .menu .right{
   display: flex;
-  width: 80%;/*800px*/
+  width: 50%;/*800px*/
   /* border: 1px solid white; */
   align-items: center;
   justify-content: flex-end;
@@ -225,8 +351,7 @@ body,html{
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 30px;
-  padding-left: 50px;
+  padding-right: 2vw;
   /* border: 1px solid white; */
 }
 .body .menu .right .search input{
@@ -241,6 +366,8 @@ body,html{
   width: 90%;
   max-width: 900px;
   padding-left: 20px;
+  border: 1px solid rgba(0,0,0,0);
+  transition: all 0.1s;
 }
 .body .menu .right .search input:focus{
   border: 1px solid coral;
@@ -258,6 +385,7 @@ body,html{
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.1s;
 }
 .body .menu .right .search .button:hover{
   background-color: rgba(0, 0, 0, 0.1);
@@ -277,17 +405,55 @@ body,html{
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  margin-right: 20px;
+  margin-right: 1.7vw;
+  transition: all 0.1s;
+}
+.body .menu .right .user:hover{
+  background-color: rgba(0, 0, 0, 0.1);
 }
 .body  .menu .right .user .icon{
   border: 1px solid white;
   width: 36px;
   height: 36px;
   border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.body  .menu .right .user:hover .icon{
+  border: 1px solid coral;
+}
+.body  .menu .right .user .icon i{
+  padding: 12px;
+  font-size: 20px;
+  transition: all 0.2s;
+}
+.body  .menu .right .user:hover .icon i{
+  padding: 12px;
+  font-size: 20px;
+  color: coral;
 }
 .body  .menu .right .user .name{
+  text-align: center;
   font-size: 12px;
   color: rgba(255, 255, 255, 0.8);
+  /* border: 1px solid white; */
+  position: absolute;
+  bottom: 1px;
+  width: 80px;
+  height: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.body .menu .right .user:hover .name{
+  color: coral;
 }
 
 
@@ -296,34 +462,83 @@ body,html{
   /* border: 1px solid white; */
   position: absolute;
   width: 90%;
-  height: 20vw;
-  max-height: 170px;
+  height: 17vw;
+  max-height: 200px;
   min-height: 130px;
-  top: 100px;
+  top: 100px;/* 100 + 170 || 130px = 270 || 230px */
+  margin-top: 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
 }
 .body .slider .content{
-  width: 200%;
+  /* width: 200%; */
+  width: auto;
   height: 100%;
   position: absolute;
-  /* border: 1px solid coral; */
-  background: rgb(45,17,43);
+  /* border: 2px solid coral; */
+  /* background: rgb(45,17,43); */
   display: flex;
   align-items: center;
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5%;
+  transition: all 0.2s;
 }
 .body .slider .content .ele{
-  width: 170px;
+  width: 11.2vw;
   height: 100%;
   /* border: 1px solid white; */
   background: rgba(255, 255, 255, 0.1);
   margin-right: 10px;
   position: relative;
+}
+.body .slider .ele .overlay{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.7);
+  transition: all 0.15s;
+  opacity: 0;
+}
+.body .slider .ele .overlay:hover{
+  opacity: 1;
+}
+.body .slider .ele .overlay .name{
+  color: white;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+}
+.body .slider .ele .overlay .play{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 2.4vw;
+  height: 2.4vw;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.body .slider .ele .overlay .play i{
+  margin-left: 2px;
+  font-size: 12px;
+  color: rgb(45,17,43);
+}
+.body .slider .ele .img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 .body .slider .shadow-left{
   left: 0;
@@ -401,17 +616,7 @@ body,html{
 .body .slider .right:hover i{
   color: rgb(45, 17, 43);
 }
-.body .slider .ele .overlay{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: rgba(0, 0, 0, 0);
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.body .slider .ele .overlay:hover{
-  background: rgba(0, 0, 0, 0.2);
-}
+
 
 
 
@@ -422,24 +627,23 @@ body,html{
 .body .movies{
   /* border: 1px solid white; */
   width: auto;
-  min-width: 95%;
-  max-width: 100%;
-  margin-top: 200px;
-  margin-bottom: 50px;
-  margin: 290px 26px 50px 26px;
+  max-width: 95%;
+  /* margin: 990px 26px 50px 26px; */
+  transform: translate(0px,320px);
   height: auto;
   display: flex;
   flex-wrap: wrap;
   padding: 5px 5px;
+  position: absolute;
   /* justify-content: center; */
 }
 .body .movies .ele{
   width: 16.8vw;
   /* min-width: 18.4%; */
   /* max-width: 200px; */
-  height: 21vw;
+  height: 22vw;
   background: rgba(100, 100, 100, 0.3);
-  margin: 0.9%;
+  margin: 0.9vw;
   display:flex;
   /* border: 1px solid white; */
   position: relative;
@@ -449,7 +653,10 @@ body,html{
   position: absolute;
   width: 100%;
   height: 100%;
-  /* border: 1px solid coral; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  transition: all 0.2s;
 }
 .body .movies .ele .overlay{
   position: absolute;
@@ -459,12 +666,32 @@ body,html{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.85);
   opacity: 0;
   transition: all 0.4s;
 }
 .body .movies .ele .overlay:hover{
   opacity: 1;
+}
+.body .ele .overlay .options{
+  /* border: 1px solid white; */
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 15px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.body .ele .overlay .options i{
+  color: white;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+.body .ele .overlay .options:hover i{
+  color: coral;
 }
 .body .movies .ele .title{
   position: absolute;
@@ -472,6 +699,7 @@ body,html{
   bottom: 10%;
   color: white;
   cursor: pointer;
+  font-size: 1.0em;
 }
 .body .movies .ele .open{
   min-width: 28px;
@@ -489,6 +717,9 @@ body,html{
   display: flex;
   justify-content: center;
   align-items: center;
+  border: none;
+  outline: none;
+  text-decoration: none;
 }
 .body .movies .ele .open i{
   color: rgb(45, 17, 43);
@@ -499,7 +730,7 @@ body,html{
   min-height: 24px;
   width: 2.4vw;
   height: 2.4vw;
-  border: 1px solid green;
+  border: 2px solid green;
   border-radius: 50%;
   position: absolute;
   display: flex;
@@ -511,6 +742,7 @@ body,html{
   position: absolute;
   background: rgba(0, 0, 0, 0.2);
   font-size: 15px;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
 }
 .body .movies .ele .genre {
   /* border: 1px solid white; */
@@ -524,6 +756,183 @@ body,html{
 .body .movies .ele .genre:hover{
   color: rgba(255, 127, 80,1);
 }
+.body .movies .ele .type{
+  color: coral;
+  position: absolute;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+  right: 10px;
+  top: 10px;
+  font-size: 14px;
+} 
+.body .movies .ele .overlay .drop-down{
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  right: 5px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s;
+}
+.body .movies .ele .overlay .drop-down.down{
+  opacity: 1;
+  pointer-events: all;
+  top: 30px;
+}
+.body .movies .ele .overlay .drop-down .edit,.body .movies .ele .overlay .drop-down .favorite{
+  width: 100%;
+  height: 50%;
+  /* border: 1px solid white; */
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-left: 10px;
+  font-size: 12px;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+.body .movies .ele .overlay .drop-down .edit:hover,.body .movies .ele .overlay .drop-down .favorite:hover{
+  color: coral;
+}
+.body .movies .ele .overlay .drop-down .edit i,.body .movies .ele .overlay .drop-down .favorite i{
+  font-size: 10px;
+  margin-right: 5px;
+}
+
+
+
+
+
+
+
+.body .pop-up{
+  /* border: 1px solid white; */
+  position: absolute;
+  width: 400px;
+  height: 500px;
+  top: 40px;
+  z-index:10;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.15s;
+}
+.body .pop-up.up{
+  opacity: 1;
+  pointer-events: all;
+}
+.body .pop-up div{
+  /* border: 1px solid white; */
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body .pop-up div:first-child{
+  /* border: 1px solid white; */
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.body .pop-up div .message{
+  color: rgba(255, 127, 80,0);
+  transition: all 0.1s;
+}
+.body .pop-up div .message.wrong{
+  color: rgba(255, 127, 80,1);
+}
+.body .pop-up div .x{
+  color: white;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-weight: 900;
+}
+.body .pop-up div .x:hover{
+  color: coral;
+}
+.body .pop-up div input{
+  outline: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0);
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 2px;
+  width: 300px;
+}
+.body .pop-up div input:focus{
+  border: 1px solid coral;
+}
+.body .pop-up div label{
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+}
+.body .pop-up div select{
+  outline: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0);
+  font-size: 16px;
+  padding: 4px;
+  border-radius: 2px;
+  width: 300px;
+}
+.body .pop-up div option{
+  outline: none;
+  background: rgba(0, 0, 0, 0.8);
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 2px;
+  width: 300px;
+}
+.body .pop-up div:nth-of-type(6) label{
+  padding: 2px;
+}
+.body .pop-up div button{
+  border: 1px solid rgba(0, 0, 0, 0);
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  cursor: pointer;
+  width: 100px;
+  padding: 10px;
+  border-radius: 3px;
+}
+.body .pop-up div button:hover{
+  border: 1px solid rgba(255, 127, 80,0.5);
+  background: rgba(0, 0, 0, 0.8);
+}
+.body .pop-up div button:active{
+  border: 1px solid rgba(255, 127, 80,1);
+}
+/* move the pop-up to the view when the user clicks the edit or add buttons */
+
+
+
+
 
 
 ::-webkit-scrollbar {
@@ -548,29 +957,61 @@ body,html{
 }
 
 .debug {
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  border: 3px solid blue;
-  top: 0;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  /* border: 1px solid white; */
+  bottom:14px;
   left: calc(50% - 25px);
   cursor: pointer;
   z-index: 12;
+  border-radius: 50%;
+  animation-name: bounce;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  transition: all 0.16s;
 }
 .debug:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255,255,255, 0.1);
 }
 .debuger {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   position: absolute;
-  border: 3px solid green;
-  top: 0;
+  /* border: 3px solid green; */
+  top: 14px;
   left: calc(50% - 25px);
   cursor: pointer;
   z-index: 12;
+  border-radius: 50%;
+  animation-name: bouncer;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  transition: all 0.16s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
 }
 .debuger:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
+@keyframes bounce {
+  from{transform: translateY(-18%);}
+  to{transform: translateY(18%);}
+}
+@keyframes bouncer {
+  from{transform: translateY(-18%);}
+  to{transform: translateY(18%);}
+}
