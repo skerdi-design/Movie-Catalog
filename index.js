@@ -60,30 +60,34 @@ app.get("/login/js",(req,res)=>{
 let userfound;
 
 app.get("/movieslist",(req,res)=>{
-    if(!(req.session && req.session.userId)){
-        res.redirect("/login");
-    }else{
-        allowUser(req.session.userId)
-        .then(doc=>{
-            // console.log(user);
-            if(doc === null){
-            res.redirect("/login");
-            }else{
-            //setting the user variable as the one that db found
-            userfound=doc;
-            res.sendFile("./movieslist/index.html",root);
-        }
-        })
-        .catch(err=>{
-            console.log(err);
-        });
-    }
+    // if(!(req.session && req.session.userId)){
+    //     res.redirect("/login");
+    // }else{
+    //     allowUser(req.session.userId)
+    //     .then(doc=>{
+    //         // console.log(user);
+    //         if(doc === null){
+    //         res.redirect("/login");
+    //         }else{
+    //         //setting the user variable as the one that db found
+    //         userfound=doc;
+    //         res.sendFile("./movieslist/index.html",root);
+    //     }
+    //     })
+    //     .catch(err=>{
+    //         console.log(err);
+    //     });
+    // }
+
+
+
+
     // findUser ("a","a@a","a")
     // .then(user =>{
     //     userfound = user;
     //     console.log(userfound);
     // })
-    // res.sendFile("./movieslist/index.html",root);
+    res.sendFile("./movieslist/index.html",root);
 })
 app.get("/movieslist/css",(req,res)=>{
     res.sendFile("/movieslist/style.css",root);
@@ -92,7 +96,7 @@ app.get("/movieslist/js",(req,res)=>{
     res.sendFile("/movieslist/script.js",root);
 })
 app.get("/image/:name",(req,res)=>{
-    res.sendFile("/image/"+req.params.name,root)
+    res.sendFile("/image/"+req.params.name,root);
 })
 
 app.get("/userinfo",(req,res)=>{

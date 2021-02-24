@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.flex_middle{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
 *{
   margin: 0;
   padding: 0;
@@ -6,16 +12,779 @@
   font-family: sans-serif;
 }
 body,html{
-  overflow-x: hidden;
-  background-color: rgb(45, 17, 43);
-}
-body,html{
   width: 100%;
   height: 100%;
   overflow:hidden;
-  /* border: 1px solid black; */
-
+  background-color: rgb(36, 10, 34);
 }
+/* logo and images =======================================================================================*/
+.body{
+  width: 100%;
+  height: 200%;
+  transition: all 2.8s;
+  transition-timing-function: ease-in-out;
+}
+.body .head{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: #fedcc8;
+}
+.body .head .images{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 55%;
+  font-size: 100%;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: height,font-size;
+}
+.body .head .images .parallax{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-repeat:no-repeat;
+}
+.parallax_0{
+  background-image: url("/image/layer_0.png");
+  background-size:cover;
+  background-position: center;
+}
+.parallax_1{
+  background-image: url("/image/layer_1.png");
+  background-size:cover;
+  background-position: center;
+}
+.parallax_2{
+  background-image: url("/image/layer_2.png");
+  background-size:cover;
+  background-position: center;
+}
+.parallax_3{
+  background-image: url("/image/layer_3.png");
+  background-size:cover;
+  background-position: center;
+}
+.parallax_4{
+  background-image: url("/image/layer_4.png");
+  background-size:cover;
+  background-position: center;
+}
+.parallax_5{
+  background-image: url("/image/layer_5.png");
+  background-size:cover;
+  background-position: center;
+}
+.parallax_6{
+  background-image: url("/image/layer_13.png");
+  background-size:cover;
+  background-position: center;
+}
+.body .head .images .svg_container{
+  font-size: inherit;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0%);
+  display: flex;
+  bottom: 8em;
+  align-items: center;
+  width: 42em;
+  margin-left: -1.2em;
+}
+.body .head .images .svg_container .logo_svg:first-child{
+  margin-right: 3.7em;
+}
+.body .head .images .svg_container .logo_svg .svg_text{
+  stroke-width: 4px;
+  stroke: white;
+  fill: none;
+  stroke-dasharray: 500 780;
+  stroke-dashoffset: 600;
+}
+.body .head .images .svg_container .logo_svg .tower{
+  fill: url('#grad2');
+  stroke: url('#grad3');
+  stroke-dasharray: 500 780;
+  stroke-dashoffset: 600;
+}
+/* === animations =========================================================================================*/
+.body .head .images .svg_container.ready .logo_svg .svg_text{
+  stroke-dasharray: 500 780;
+  stroke-dashoffset: 600;
+  stroke: white;
+  animation-name: stroke;
+  animation-duration: 3.7s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.body .head .images .svg_container.ready .logo_svg .path1{
+  animation-delay: 0.2s;
+}
+.body .head .images .svg_container.ready .logo_svg .path2{
+  animation-delay: 0.25s;
+}
+.body .head .images .svg_container.ready .logo_svg .path3{
+  animation-delay: 0.3s;
+}
+.body .head .images .svg_container.ready .logo_svg .path4{
+  animation-delay: 0.35s;
+}
+.body .head .images .svg_container.ready .logo_svg .path5{
+  animation-delay: 0.4s;
+}
+.body .head .images .svg_container.ready .logo_svg .tower{
+  stroke-dasharray: 500 700;
+  stroke-dashoffset: 600;
+  stroke: url('#grad3');
+  stroke-width: 4;
+  animation-name: stroke_tower;
+  animation-duration: 3.7s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.body .head .images .svg_container.ready .logo_svg .tower1{
+  animation-delay: 0.2s;
+}
+.body .head .images .svg_container.ready .logo_svg .tower2{
+  animation-delay: 0.25s;
+}
+.body .head .images .svg_container.ready .logo_svg .tower3{
+  animation-delay: 0.3s;
+}
+.body .head .images .svg_container.ready .logo_svg .tower4{
+  animation-delay: 0.35s;
+}
+.body .head .images .svg_container.ready .logo_svg .tower5{
+  animation-delay: 0.4s;
+}
+.body .head .images .svg_container.ready .logo_svg #grad2 stop{
+  stop-opacity:0;
+  animation-name: opacity;
+  animation-duration: 3.7s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes stroke{
+  from{
+    stroke-dasharray: 500 780;
+    stroke-dashoffset: 600;
+  }
+  to{
+    stroke-dasharray: 500 0;
+    stroke-dashoffset: 200;
+  }
+}
+@keyframes stroke_tower{
+  0%{
+    stroke-dasharray: 500 700;
+    stroke-dashoffset: 600;
+    stroke-width: 4;
+  }
+  50%{
+    stroke-width: 3;
+  }
+  100%{
+    stroke-width: 0;
+    stroke-dasharray: 500 0;
+    stroke-dashoffset: 200;
+  }
+}
+@keyframes opacity{
+  0%{
+    stop-opacity:0;
+  }
+  50%{
+    stop-opacity:0;
+  }
+  100%{
+    stop-opacity:1;
+  }
+}
+/*==the pines ===========================================================================================*/
+.body .head .images .svg_container .pine1,.body .head .images .svg_container .pine2{
+  position: absolute;
+  transform-origin: bottom center;
+  top: 0;
+  right: 0;
+  width: 2em;
+  height: 2em;
+  margin-right: -0.5em;
+  margin-top: -0.1em;
+}
+.body .head .images .svg_container .pine1{
+  transform: rotate(30deg) scale(0);
+  z-index: 3;
+}
+.body .head .images .svg_container .pine2{
+  transform: rotate(60deg) scale(0);
+  width: 1.8em;
+  height: 1.8em;
+}
+.body .head .images .svg_container.ready .pine1{
+  animation-name: pine_logo1;
+  animation-fill-mode: forwards;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 3.5s;
+}
+.body .head .images .svg_container.ready .pine2{
+  animation-name: pine_logo2;
+  animation-fill-mode: forwards;
+  animation-duration: 1.2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 3.7s;
+}
+@keyframes pine_logo1{
+  from{
+    transform: rotate(30deg) scale(0);
+  }
+  to{
+    transform: rotate(30deg) scale(1);
+  }
+}
+@keyframes pine_logo2{
+  from{
+    transform: rotate(60deg) scale(0);
+  }
+  to{
+    transform: rotate(60deg) scale(1);
+  }
+}
+/*== scroller ==================================================================================================*/
+.body .head .scroller{
+  border: 2px solid white;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%) scale(0);
+  width: 16px;
+  height: 38px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: all 1s ease-in-out;
+}
+.body .head .scroller.ready{
+  transform: translateX(-50%) scale(1);
+}
+.body .head .scroller.unready{
+  transform: translateX(-50%) scale(0);
+}
+.body .head .scroller:hover{
+  box-shadow: 0px 0px 1px 0px white;
+}
+.body .head .scroller .start{
+  color: white;
+  position: absolute;
+  font-size: 0.8em;
+  top: -0.5em;
+  margin-top: -0.9em;
+  transition: all 0.2s ease-in-out;
+}
+.body .head .scroller:hover .start{
+  /* top: -0.75em; */
+  text-shadow: 0px 0px 2px white;
+}
+.body .head .scroller .wheel{
+  border: 1px solid white;
+  width: 1px;
+  height: 7px;
+  margin-top: 5px;
+  border-radius: 5px;
+  transition: all 0.15s;
+}
+.body .head .scroller:hover .wheel{
+  height: 12px;
+  box-shadow: 0px 0px 1px 0px white;
+}
+@media only screen and (max-width: 600px) {
+  .body .head .images{
+    width: 100%;
+    height: 50%;
+  }
+  .body .head .images{
+    font-size: 50%;
+  }
+  .body .head .images .svg_container{
+    bottom: 18em;
+    margin-left: -0.5em;
+  }
+}
+/*--topnav----------------------------------------------------------------------------------------------------*/
+.body .head .top_link{
+  /* border:1px solid black; */
+  width: 300px;
+  height: 60px;
+  position: absolute;
+  right: 11vw;
+  top: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 100%;
+}
+.body .head .top_link .links{
+  width: 3.75em;
+  height: 3.75em;
+  cursor: pointer;
+  /* border: 1px solid black; */
+  position: relative;
+  overflow: hidden;
+  font-size: inherit;
+  opacity: 0;
+  transform: translateY(-80%);
+}
+/*delay the animation for a wave effect*/
+.body .head .top_link .links:nth-child(2){
+  animation-delay: 0.2s;
+}
+.body .head .top_link .links:nth-child(3){
+  animation-delay: 0.4s;
+}
+/*when the ready class is added to top_link add the animation*/
+.body .head .top_link.ready .links{
+  animation-name: down;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+.body .head .top_link.unready .links{
+  animation-name: up;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  opacity: 0;
+  transform: translateY(-80%);
+}
+.body .head .top_link .links .fab{
+  color: rgba(36, 10, 34,0.9);
+  font-size: 1.4em;
+  transition: all 0.15s;
+}
+.body .head .top_link .links .svg_line{
+  /* border: 1px solid rgba(36, 10, 34,1); */
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  bottom: 0;
+}
+.body .head .top_link .links .svg_line .line{
+  stroke-dasharray: 0 60;
+  stroke-dashoffset: -30;
+  transition: all 0.15s;
+}
+.body .head .top_link .links:hover .svg_line .line{
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+}
+.body .head .top_link .links:hover .fab{
+  color: rgba(36, 10, 34,1);
+  text-shadow: 0px 0px 1px rgba(36, 10, 34,1);
+  transform: rotate(10deg) scale(1.1);
+}
+@media only screen and (max-width: 600px) {
+  .body .head .top_link{
+    width: 50px;
+    height: 280px;
+    top: 2vw;
+    right: 3vw;
+    flex-direction: column;
+    font-size: 60%;
+  }
+  .body .head .top_link .links{
+    transform: rotate(-90deg);
+  }
+  .body .head .top_link .links .fab{
+    transform: rotate(90deg);
+  }
+  .body .head .top_link .links:hover .fab{
+    transform: rotate(100deg) scale(1.1);
+  }
+}
+@keyframes down {
+  from{
+    opacity: 0;
+    transform: translateY(-80%);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes up {
+  from{
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  to{
+    opacity: 0;
+    transform: translateY(-80%);
+  }
+}
+/*==left-text ==============================================================================================*/
+.left_text{
+  font-size: 100%;
+  width: 20em;
+  height: 12.5em;
+  position: absolute;
+  top: 55vh;
+  left: 10vw;
+  transform: translateY(-80%) scale(0.4);
+  opacity: 0;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.2s;
+}
+.left_text .header{
+  width: 100%;
+  height: 5.7em;
+  font-size: inherit;
+  /* font-family: 'Permanent Marker', cursive; */
+}
+.left_text .header h1{
+  display: inline-block;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.05em;
+  line-height: 1.3em;
+  text-transform: uppercase;
+  color: rgba(36, 10, 34,0.9);
+  text-shadow: 0px 0px 4px rgba(36, 10, 34,0.5);
+  margin-right: 0.2em;
+  margin-bottom: 0.06em;
+}
+.left_text .header .bold{
+  font-family: 'Poppins', sans-serif;
+  color: rgba(36, 10, 34,1);
+  text-shadow: 0px 0px 4px rgba(36, 10, 34,0.6);
+  position: relative;
+  transition: all 0.1s;
+}
+.left_text .header .bold .svg_line{
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  border-radius: 2px;
+}
+.left_text .header .bold .svg_line .line{
+  stroke-dasharray: 0 180;
+  stroke-dashoffset: -90;
+  transition: all 0.15s;
+}
+.left_text .header .bold:hover .svg_line .line{
+  stroke-dasharray: 180;
+  stroke-dashoffset: 0;
+}
+.left_text .header .bold:nth-of-type(3) .svg_line .line{
+  stroke-dasharray: 0 110;
+  stroke-dashoffset: -55;
+  transition: all 0.18s;
+}
+.left_text .header .bold:nth-of-type(3):hover .svg_line .line{
+  stroke-dasharray: 110;
+  stroke-dashoffset: 0;
+}
+.left_text .para{
+  color: rgba(36, 10, 34,0.9);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1em;
+  margin-top: 30px;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  line-height: 22px;
+  text-shadow: 0px 0px 4px rgba(36, 10, 34,0.5);
+}
+.left_text .para span{
+  font-family: 'Poppins', sans-serif;
+  color: rgba(36, 10, 34,1);
+  text-shadow: 0px 0px 4px rgba(36, 10, 34,0.6);
+}
+.left_text .header .pine1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.4em;
+  height: 2.4em;
+  margin-left: -1.6em;
+  margin-top: -1.6em;
+  transform: rotate(-15deg);
+  z-index: 3;
+  transition: all 0.5s;
+}
+.left_text .header .pine2 path{
+  fill: url('#red');
+  stroke-width: 0;
+}
+.left_text .header .pine2{
+  position: absolute;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2.1em;
+  height: 2.1em;
+  margin-left: -1.4em;
+  margin-top: -1.5em;
+  transform: rotate(-55deg);
+  z-index: 2;
+  transition: all 0.7s;
+}
+.left_text .header .pine1 .pine_svg{
+  width: 100%;
+  height: 100%;
+}
+.left_text .header .pine2 .pine_svg{
+  width: 100%;
+  height: 100%;
+}
+.left_text .header .pine1:hover .pine_svg,.left_text .header .pine2:hover .pine_svg{
+  animation-name: shrug;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  transform-origin: bottom center;
+}
+@keyframes shrug{
+  0%{
+    transform: rotate(0deg);
+  }
+  40%{
+    transform: rotate(-6deg);
+  }
+  80%{
+    transform: rotate(2deg);
+  }
+  100%{
+    transform: rotate(0deg);
+  }
+}
+/*== animations =====================================================================================*/
+.left_text.ready{
+  animation-name: pop;
+  animation-duration: 1.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.left_text.ready .header .pine1{
+  animation-name: grow;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  transform-origin: bottom center;
+  animation-delay: 1.4s;
+  transform: rotate(-5deg) scale(0);
+}
+.left_text.ready .header .pine2{
+  transform-origin: bottom center;
+  animation-name: grow2;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  transform-origin: bottom center;
+  animation-delay: 1.6s;
+  transform: rotate(-50deg) scale(0);
+}
+.left_text.unready .header .pine1{
+  animation-name: ungrow;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  transform-origin: bottom center;
+}
+.left_text.unready .header .pine2{
+  transform-origin: bottom center;
+  animation-name: ungrow2;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  transform-origin: bottom center;
+}
+.left_text.unready {
+  animation-name: unpop;
+  animation-duration: 1.4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+@keyframes pop{
+  from{
+    transform: translateY(-80%) scale(0.4);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(-80%) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes unpop{
+  from{
+    transform: translateY(-80%) scale(1);
+    opacity: 1;
+  }
+  to{
+    transform: translateY(-80%) scale(0.4);
+    opacity: 0;
+  }
+}
+@keyframes grow{
+  from{
+    transform: rotate(-10deg) scale(0);
+  }
+  to{
+    transform: rotate(-10deg) scale(1)
+  }
+}
+@keyframes grow2{
+  from{
+    transform: rotate(-50deg) scale(0);
+  }
+  to{
+    transform: rotate(-50deg) scale(1);
+  }
+}
+@keyframes ungrow{
+  from{
+    transform: rotate(-10deg) scale(1);
+  }
+  to{
+    transform: rotate(-10deg) scale(0);
+  }
+}
+@keyframes ungrow2{
+  from{
+    transform: rotate(-45deg) scale(1);
+  }
+  to{
+    transform: rotate(-45deg) scale(0);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .left_text{
+    font-size: 80%;
+    top: 38%;
+    left: 10vw;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.catalog{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: rgb(36, 10, 34);
+}
+.catalog .scroll_up{
+  width: 30px;
+  height: 30px;
+  border: 5px solid green;
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container{
   width: 100%;
   height: 200%;
@@ -66,7 +835,7 @@ body,html{
   background-repeat:no-repeat;
 }
 .intro .parallax .parallax__0{
-  background-image:url("/image/layer_0.png");
+  background-image:url("./Image/layer_0.png");
   background-size:cover;
   background-position: center;
   position: absolute;
@@ -97,51 +866,43 @@ body,html{
   background-position: center;
 }
 .parallax__6{
-  background-image:url("/image/layer_6.png");
+  background-image:url("/image/layer_13.png");
   background-size:cover;
   background-position: center;
 }
-.intro .parallax .head{
-  color: rgb(45, 17, 43);
-  font-family: 'Brush Script MT', cursive;
-  position: fixed;
-  left: 50%;
-  top: 240px;
-  /* transform: translateX(-50%); */
-  font-size: 40px;
-}
-.intro .but{
-  width: 38px;
-  height: 38px;
-  position: absolute;
-  left: 50%;
-  top: 88%;
-  transform: translate(-50%,0%);
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0);
-  animation-name: bounce;
-  animation-duration: 0.9s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-  cursor:pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s;
-}
-.intro .but:hover{
-  background: rgba(255, 255, 255, 0.1);
-}
-.intro .but i{
-  color: white;
-  font-size: 20px;
-  margin-top: 2px;
-}
-@keyframes bounce {
-  from{top: 88%;}
-  to{top: 91%;}
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -258,8 +1019,8 @@ body,html{
   color: rgba(0, 0, 0, 0.9);
   font-size: 16px;
 }
-.body{
-  /* border: 1px solid red; */
+/* .body{
+  border: 1px solid red;
   width: 100vw;
   min-height: 100vh;
   height: auto;
@@ -267,13 +1028,13 @@ body,html{
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   position: relative;
   overflow-y: scroll;
   perspective: 1.5px;
   transform-style: preserve-3d;
   overflow-x: hidden;
-}
+} */
 .body .menu{
   position: sticky;
   top: 0;
@@ -935,7 +1696,7 @@ body,html{
 
 
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
  width: 8px;
  position: absolute;
  right: 10px;
@@ -954,7 +1715,26 @@ body,html{
 }
 ::-webkit-scrollbar-thumb:active {
   background: rgba(255, 138, 66,1);
-}
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .debug {
   width: 45px;
